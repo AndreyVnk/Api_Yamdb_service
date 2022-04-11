@@ -89,6 +89,7 @@ class Test01UserAPI:
     def test_04_02_users_get_search(self, admin_client, admin):
         url = '/api/v1/users/'
         search_url = f'{url}?search={admin.username}'
+        print(search_url)
         response = admin_client.get(search_url)
         assert response.status_code != 404, (
             'Страница `/api/v1/users/?search={username}` не найдена, проверьте этот адрес в *urls.py*'
